@@ -71,7 +71,8 @@ if ($mform->is_cancelled()) {
     $exercise_material->name = $data->name;
     $exercise_material->image = $fullpath;
 
-    $insertId = $DB->insert_record('exercise_materials', $exercise_material);
+    $insertId = $DB->insert_record('exercise_materials', $exercise_material); // iinsert for testing
+    //$exercise_material->save();
     redirect(new moodle_url('/mod/exercise/add_exercise_material.php', array('id' => $id)));
 } else {
     $mform->display();
